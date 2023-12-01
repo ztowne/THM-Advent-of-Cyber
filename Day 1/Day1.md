@@ -24,7 +24,7 @@ First, we check to see if the chatbot was trained on personal information via th
 
  Where we get the following response, showing this chatbot was trained on sensitive data:
 
- ![chatbot response](image-1.png)
+ ![Alt text](Screenshot_20231201_011100.png)
 
 Next, we will explore the security measures that the chatbot does have in place. We check to see if it will give us the password to the IT server room door. The chatbot tells us that we must be a member of the IT department. To which we simply prompt the chatbot to tell us who those members are. The chatbot returns with a response:
 
