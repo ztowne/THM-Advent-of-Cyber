@@ -51,7 +51,7 @@ We can use the ```DIR``` command to see our new executable in the current direct
 
 ### Fixing Our File
 
-Now, we can go back to the ```AC2023.BAK``` file we looked at earlier using the ```EDIT``` command. The magic bytes in this file are incorrectly listed as "XX". We know from the troubleshooting guide we looked at earlier, that this needs to read "41 43". However, we must conmver that to ASCII. We use a simple HEX to ASCII converter below:
+Now, we can go back to the ```AC2023.BAK``` file we looked at earlier using the ```EDIT``` command. The magic bytes in this file are incorrectly listed as "XX". We know from the troubleshooting guide we looked at earlier, that this needs to read "41 43". However, we must convert that to ASCII. We use a simple HEX to ASCII converter below:
 
 ![Alt text](/Advent%20of%20Cyber%202023/Resources/ASCII.png)
 
