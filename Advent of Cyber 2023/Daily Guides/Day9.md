@@ -64,3 +64,47 @@ We see that it accepts a URL as a string, initiates an HTTP requests to the URL 
 
 ## Building the Malware Execution Pipeline
 
+We will go back and look at the ```Main``` function of the code. We will first look at the code before the ```for loop```:
+
+![Alt text](/Advent%20of%20Cyber%202023/Resources/beforeforloop.png)
+
+Things to note in this section is the ```Dns.GetHostName()``` which retrieves the victim machines host names. This helps the attacker distrinugish the compromised machines based on the hostname.
+
+We can also note the ```PostIt``` function we previously looked at appears here. We can see the function sends the hostname of the victim machine to the C2 server to establish a connection..
+
+Now, we can look at the fod inside the for loop (before the first ```if``` statement):
+
+![Alt text](/Advent%20of%20Cyber%202023/Resources/beforeifstatement.png)
+
+Here we can see the for loop being set to ```;;``` meaning it will run indefinitely until a break statement is used.
+
+We see the ```Sleeper``` function being called where the ```count``` variable is being passed that was initialized before the for-loop.
+
+We can see two string variables being used, where ```str2``` is passed to the ```GetIt``` function and stored in the ```it``` variable. 
+
+Lastly, we see that the ```if``` statement only runs if the ```it``` variable is ```NOT``` empty. 
+
+Now we can look at the code inside the first ```if``` statement:
+
+![Alt text](/Advent%20of%20Cyber%202023/Resources/firstifstatement.png)
+
+Important things to note in this code block:
+
+The ```Decryptor``` funciton decrypts the ```it``` variable and splits it with a space character. The ```a``` variable value is the first element of the resulting array. The ```text``` variable combines all the elements in the array excluding the first element. 
+
+We can now look at the nested conditional satement:
+
+![Alt text](/Advent%20of%20Cyber%202023/Resources/nested.png)
+
+ All the conditions in this statement are set to ```!``` meaning ```NOT```. This code block checks to see if the ```a``` variable is not equal to the condition. If it doesn't equal the condition, it is pass to the next statement. Otherwise, it will jump to its counterpart ```else``` statement.
+
+ Below is a table with the code block summary of each conditional statement:
+
+ ![Alt text](/Advent%20of%20Cyber%202023/Resources/codeblocktable.png)
+
+ Finally, the last conditional statement checks if the flag variable is set to ```true```. If so, it will execute a ```break``` statement.
+
+ ## Conclusion
+
+ In today's room, we went over a simple piece of malware and broke it down function by function, before walking through the ```Main``` function to figure out what exactly the malware is doing.
+
